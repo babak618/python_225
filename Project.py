@@ -1,5 +1,5 @@
 import csv
-csv_file = open('sample.csv')
-csv_read = csv.reader(csv_file)
-for i in csv_read:
-     print(i)
+with open('sample.csv') as csv_file:
+    csv_read = csv.reader(csv_file)
+    for i in csv_read:
+        print(i)
