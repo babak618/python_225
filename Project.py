@@ -1,5 +1,5 @@
 import csv
-with open('sample.csv') as csv_file:
+with open('SAIPA-co.csv') as csv_file:
     csv_read = csv.reader(csv_file)
     list1 = [row for row in csv_read]
     #print(list1)
