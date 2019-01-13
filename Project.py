@@ -1,13 +1,11 @@
 import csv
+import re
+final_list = []
 with open('SAIPA-Co.csv') as csv_file:
     csv_read = csv.reader(csv_file)
-    list1 = [row for row in csv_read]
-    #print(list1)
-    list2 = [i for i in list1 if '<OPEN>' not in i]
-    #print(list2)
-    list3 = [column[5] for column in list2]
-    print(max(list3))
-    line = list3.index(max(list3))
-    #print(line)
-    print(list2[line])
+    for row in csv_read:
+        list1 = [float(i) for i in row if re.match("\d", i)]
+        if len(list1) > 0:
+            final_list.append(list1)
 
+print(final_list)
