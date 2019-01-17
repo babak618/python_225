@@ -13,6 +13,8 @@ print(final_list)
 def morning_star_candle(list):
     for i in list:
         date,open,close,high,low,vol = i[0],i[1],i[4],i[2],i[3],i[5]
-        print(date, close)
+        if(100 * (abs(open - close))) / open < 1 and (abs(open + close) / 2) * 1.02 < high:
+            print(i)
+
 
 morning_star_candle(final_list)
