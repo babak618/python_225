@@ -17,9 +17,9 @@ def morning_star_candle(list):
         if(100 * (abs(open - close))) / open < 1 and (abs(open + close) / 2) * 1.01 < high: # Doji candlestick
             candle_index = final_list.index(i)
             p_candle, n_candle = candle_index - 1, candle_index + 1 # previous candle, next candle
-
-            print(p_candle, n_candle)
-
+            #print(p_candle, n_candle)
+            if final_list[p_candle][1] > final_list[p_candle][4] and final_list[p_candle][4] > low:# previously candle structur
+                print(i)
 
 morning_star_candle(final_list)
 
