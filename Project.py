@@ -20,6 +20,11 @@ def morning_star_candle(list):
             #print(p_candle, n_candle)
             if final_list[p_candle][1] > final_list[p_candle][4] and final_list[p_candle][4] > low:# previously candle structur
                 print(i)
+                if final_list[n_candle][1] < final_list[n_candle][4] and final_list[n_candle][4] > final_list[p_candle][4] :
+
+                    if final_list[n_candle][1] > (open and close):
+                        print(i)
+
 
 morning_star_candle(final_list)
 
