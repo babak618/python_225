@@ -8,7 +8,7 @@ with open('SAIPA-Co.csv') as csv_file:
         if len(list1) > 0:
             final_list.append(list1)
 
-print(final_list)
+#print(final_list)
 # <date>[0],<OPEN>[1],<HIGH>[2],<LOW>[3],<CLOSE>[4],<VOL>[5]
 def morning_star_candle(list):
     for i in list:
@@ -19,11 +19,15 @@ def morning_star_candle(list):
             p_candle, n_candle = candle_index - 1, candle_index + 1 # previous candle, next candle
             #print(p_candle, n_candle)
             if final_list[p_candle][1] > final_list[p_candle][4] and final_list[p_candle][4] > low:# previously candle structur
-                print(i)
+                #print(i)
                 if final_list[n_candle][1] < final_list[n_candle][4] and final_list[n_candle][4] > final_list[p_candle][4] :
 
                     if final_list[n_candle][1] > (open and close):
-                        print(i)
+                        #print(i)
+                        if final_list[n_candle][4] > ((final_list[p_candle][1] - final_list[p_candle][4]) / 2 ) + final_list[p_candle][4]:
+
+                            m = (str(i[0]))
+                            print(f"{m[0:4]}--{m[4:6]}--{m[6:8]}")
 
 
 morning_star_candle(final_list)
