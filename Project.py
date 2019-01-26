@@ -1,7 +1,7 @@
 import csv
 import re
 fs = []
-with open('SAIPA-Co.csv') as csv_file:
+with open('SIPA1-a.csv') as csv_file:
     csv_read = csv.reader(csv_file)
     for row in csv_read:
         list1 = [float(i) for i in row if re.match("\d", i)]
@@ -19,7 +19,7 @@ def morning_star_candle(final_list):
             candle_index = fs.index(i)
             p_candle, n_candle = candle_index - 1, candle_index + 1  # previous candle, next candle
 
-            if fs[p_candle][1] > fs[p_candle][4] and (fs[p_candle][4] > low):  # previously candle structure
+            if fs[p_candle][1] > fs[p_candle][4] and fs[p_candle][4] > low:  # previously candle structure
 
                 if fs[n_candle][1] < fs[n_candle][4] and fs[n_candle][4] > fs[p_candle][4]:
 
