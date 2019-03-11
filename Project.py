@@ -5,8 +5,9 @@ with open('SIPA1-a.csv') as csv_file:
     csv_read = csv.reader(csv_file)
     for row in csv_read:
         list1 = [float(i) for i in row if re.match("\d", i)]
-        if len(list1) > 0:
+        if len(list1) > 0 and list1 not in fs:
             fs.append(list1)
+
 
 # <date>[0],<OPEN>[1],<HIGH>[2],<LOW>[3],<CLOSE>[4],<VOL>[5]
 
@@ -32,3 +33,4 @@ def morning_star_candle(final_list):
 
 
 morning_star_candle(fs)
+print(len(fs))
